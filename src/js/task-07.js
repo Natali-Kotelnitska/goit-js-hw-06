@@ -16,4 +16,5 @@ rangeControlEl.addEventListener('change', onTextSizeChange);
 function onTextSizeChange(event) {
   console.log(event.currentTarget);
   textEl.style.fontSize = event.currentTarget.value + 'px';
+  console.log(event.currentTarget.value);
 }
