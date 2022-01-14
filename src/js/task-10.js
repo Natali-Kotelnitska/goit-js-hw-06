@@ -24,15 +24,12 @@
 
 // Создай функцию destroyBoxes(), которая очищает содержимое div#boxes, тем самым удаляя все созданные элементы.
 
-let amount = 0;
 const inputEl = document.querySelector('input');
 const buttonCreateEl = document.querySelector('button[data-create]');
 const buttonDestroyEl = document.querySelector('button[data-destroy]');
 const boxesContainerEl = document.getElementById('boxes');
 //
 
-// inputEl.addEventListener('input', onOutputChange);
-// buttonCreateEl.addEventListener('click', createBoxes);
 buttonCreateEl.addEventListener('click', onOutputChange);
 
 buttonDestroyEl.addEventListener('click', destroyBoxes);
@@ -40,14 +37,17 @@ buttonDestroyEl.addEventListener('click', destroyBoxes);
 let boxSize = 30;
 
 function onOutputChange() {
-  // event.currentTarget.value;
-  amount = inputEl.value;
+  let amount = Number(inputEl.value);
   console.log(amount);
-  createBoxes(amount);
+  const result = createBoxes(amount);
 }
 
 function createBoxes(amount) {
-  for (let i = 0; (i = amount); i++) {
+  // let newArray = [];
+  // newArray.push(amount);
+  // newArray.map(number => {
+  for (let i = 0; i <= amount; i++) {
+    //   console.log(i);
     boxSize += 10;
 
     const box = document.createElement('div');
