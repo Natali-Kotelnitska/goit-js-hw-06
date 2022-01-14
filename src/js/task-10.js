@@ -31,22 +31,25 @@ const buttonDestroyEl = document.querySelector('button[data-destroy]');
 const boxesContainerEl = document.getElementById('boxes');
 //
 
-inputEl.addEventListener('input', onOutputChange);
-buttonCreateEl.addEventListener('click', createBoxes);
+// inputEl.addEventListener('input', onOutputChange);
+// buttonCreateEl.addEventListener('click', createBoxes);
+buttonCreateEl.addEventListener('click', onOutputChange);
+
 buttonDestroyEl.addEventListener('click', destroyBoxes);
 
 let boxSize = 30;
 
-function onOutputChange(event) {
-  amount = event.currentTarget.value;
+function onOutputChange() {
+  // event.currentTarget.value;
+  amount = inputEl.value;
   console.log(amount);
   createBoxes(amount);
 }
 
 function createBoxes(amount) {
-  console.log('click');
-  for (let i = 0; i <= amount; i++) {
+  for (let i = 0; (i = amount); i++) {
     boxSize += 10;
+
     const box = document.createElement('div');
     box.style.width = boxSize + 'px';
     box.style.height = boxSize + 'px';
@@ -59,7 +62,7 @@ function createBoxes(amount) {
   }
 }
 
-// функцию destroyBoxes(), которая очищает содержимое div#boxes, тем самым удаляя все созданные элементы.
+// функция destroyBoxes(), которая очищает содержимое div#boxes, тем самым удаляя все созданные элементы.
 function destroyBoxes() {
   boxesContainerEl.innerHTML = '';
   boxSize = 30;
