@@ -46,7 +46,7 @@ function createBoxes(amount) {
   // let newArray = [];
   // newArray.push(amount);
   // newArray.map(number => {
-  for (let i = 0; i <= amount; i++) {
+  for (let i = 1; i <= amount; i++) {
     //   console.log(i);
     boxSize += 10;
 
@@ -58,7 +58,7 @@ function createBoxes(amount) {
     box.style.border = 'solid 1px black';
 
     boxesContainerEl.append(box);
-    return box;
+    // return box;
   }
 }
 

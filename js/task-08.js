@@ -24,10 +24,10 @@ function onFormSubmit(event) {
     alert('Please fill in all the fields!');
   }
 
-  const formData = new FormData(event.currentTarget);
-  formData.forEach((value, name) => {
-    console.log(`${name}: ${value}`);
-  });
-  //   console.log(`Email: ${email.value}, Password: ${password.value}`);
-  event.currentTarget.reset();
+  const formData = {};
+  formData.email = email.value;
+  formData.password = password.value;
+  console.log(formData);
+
+  formEl.reset();
 }

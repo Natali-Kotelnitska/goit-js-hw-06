@@ -6,7 +6,7 @@
 const rangeControlEl = document.querySelector('#font-size-control');
 const textEl = document.querySelector('#text');
 
-rangeControlEl.addEventListener('change', onTextSizeChange);
+rangeControlEl.addEventListener('input', onTextSizeChange);
 
 function onTextSizeChange(event) {
   console.log(event.currentTarget);
