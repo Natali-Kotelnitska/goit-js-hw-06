@@ -3,16 +3,6 @@
 // после чего рендерится коллекция.
 // При нажатии на кнопку Очистить, коллекция элементов очищается.
 
-{
-  /* <div id="controls">
-  <input type="number" min="1" max="100" step="1" />
-  <button type="button" data-create>Create</button>
-  <button type="button" data-destroy>Destroy</button>
-</div>
-
-<div id="boxes"></div> */
-}
-
 // Создай функцию createBoxes(amount), которая принимает
 // один параметр - число.Функция создает столько < div >,
 // сколько указано в amount и добавляет их в div#boxes.
@@ -31,23 +21,17 @@ const boxesContainerEl = document.getElementById('boxes');
 //
 
 buttonCreateEl.addEventListener('click', onOutputChange);
-
 buttonDestroyEl.addEventListener('click', destroyBoxes);
 
 let boxSize = 30;
 
 function onOutputChange() {
   let amount = Number(inputEl.value);
-  console.log(amount);
   const result = createBoxes(amount);
 }
 
 function createBoxes(amount) {
-  // let newArray = [];
-  // newArray.push(amount);
-  // newArray.map(number => {
   for (let i = 1; i <= amount; i++) {
-    //   console.log(i);
     boxSize += 10;
 
     const box = document.createElement('div');
@@ -58,7 +42,6 @@ function createBoxes(amount) {
     box.style.border = 'solid 1px black';
 
     boxesContainerEl.append(box);
-    // return box;
   }
 }
 
